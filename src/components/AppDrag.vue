@@ -4,6 +4,7 @@
     @dragstart.self="onDrag"
     @dragover.prevent
     @dragenter.prevent
+    v-on="$listeners"
   >
     <slot/>
   </div>
