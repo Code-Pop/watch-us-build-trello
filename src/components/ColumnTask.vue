@@ -3,6 +3,7 @@
     @drop="moveTaskOrColumn"
   >
     <AppDrag
+      @click.native="goToTask(task)"
       class="task"
       :transferData="{
         type: 'task',
