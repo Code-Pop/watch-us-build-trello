@@ -3,14 +3,13 @@
     @drop="moveTaskOrColumn"
   >
     <AppDrag
-      @click.native="goToTask(task)"
       class="task"
       :transferData="{
         type: 'task',
         fromColumnIndex: columnIndex,
         fromTaskIndex: taskIndex
       }"
-      @click="goToTask(task)"
+      @click.native="goToTask(task)"
     >
       <span class="w-full flex-no-shrink font-bold">
         {{ task.name }}
