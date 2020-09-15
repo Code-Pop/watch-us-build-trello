@@ -22,7 +22,7 @@ export default {
       e.dataTransfer.effectAllowed = 'move'
       e.dataTransfer.dropEffect = 'move'
 
-      e.dataTransfer.setData('payload', JSON.stringify(this.transferData))
+      e.dataTransfer.setData('text', JSON.stringify(this.transferData))
     }
   }
 }
