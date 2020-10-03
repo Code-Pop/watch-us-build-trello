@@ -4,6 +4,7 @@
     @dragstart.self="onDrag"
     @dragover.prevent
     @dragenter.prevent
+    @click="emitClickEvent"
   >
     <slot/>
   </div>
@@ -23,6 +24,9 @@ export default {
       e.dataTransfer.dropEffect = 'move'
 
       e.dataTransfer.setData('payload', JSON.stringify(this.transferData))
+    },
+    emitClickEvent () {
+      this.$emit('click')
     }
   }
 }
