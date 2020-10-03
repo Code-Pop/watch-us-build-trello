@@ -23,12 +23,14 @@ export default {
     },
     moveTask ({ fromColumnIndex, fromTaskIndex }) {
       const fromTasks = this.board.columns[fromColumnIndex].tasks
+      const toTasks = this.board.columns[this.columnIndex].tasks
+      const toTaskIndex = this.taskIndex === undefined ? toTasks.length : this.taskIndex
 
       this.$store.commit('MOVE_TASK', {
         fromTasks,
+        toTasks,
         fromTaskIndex,
-        toTasks: this.column.tasks,
-        toTaskIndex: this.taskIndex
+        toTaskIndex
       })
     },
     moveColumn ({ fromColumnIndex }) {
